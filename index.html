@@ -3,21 +3,23 @@
 <head>
     <title>Securiti Compliance Test Site</title>
     
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
-	s.setAttribute('data-tenant-uuid', '4f6e2010-2e0d-40f3-8e6e-81bb16f29d0a');
-	s.setAttribute('data-domain-uuid', '91c9283b-0a5a-4c06-aa22-4a749afbf014');
-	s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-	s.setAttribute('data-skip-css', 'false');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-})()
-</script>
-    
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+	<script>
+	(function () {
+		var s = document.createElement('script');
+		s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+		s.setAttribute('data-tenant-uuid', '4f6e2010-2e0d-40f3-8e6e-81bb16f29d0a');
+		s.setAttribute('data-domain-uuid', '91c9283b-0a5a-4c06-aa22-4a749afbf014');
+		s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+		s.setAttribute('data-skip-css', 'false');
+		s.defer = true;
+		var parent_node = document.head || document.body;
+		parent_node.appendChild(s);
+	})()
+	</script>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+	<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+	
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     
     <script src="https://connect.facebook.net/en_US/fbevents.js" async></script>
