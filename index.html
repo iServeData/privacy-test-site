@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Securiti Compliance Test Site</title>
-    
+
 	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 	<script>
 	(function () {
@@ -12,7 +12,7 @@
 		s.setAttribute('data-domain-uuid', '91c9283b-0a5a-4c06-aa22-4a749afbf014');
 		s.setAttribute('data-backend-url', 'https://app.securiti.ai');
 		s.setAttribute('data-skip-css', 'false');
-		s.defer = false;
+		s.defer = true;
 		var parent_node = document.head || document.body;
 		parent_node.appendChild(s);
 	})()
