@@ -2,7 +2,20 @@
 <html>
 <head>
     <title>Securiti Compliance Test Site</title>
-	
+	<style>
+    .cmp-revoke-consent {
+        position: fixed !important;
+        bottom: 300px !important; /* Adjust this if the banner is taller */
+        left: 20px !important;
+        z-index: 99999 !important; /* Ensures it stays on top of the banner */
+        background-color: #333 !important;
+        color: white !important;
+        padding: 8px 15px !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-size: 14px !important;
+    }
+	</style>
 
 	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 	<script>
