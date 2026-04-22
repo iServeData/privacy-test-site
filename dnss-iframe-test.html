@@ -3,7 +3,22 @@
 <head>
     <title>Securiti Compliance Test Site</title>
 	<style>
-    .cmp-revoke-consent {
+    /* 1. Reset margins so the iframe can touch the edges */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* 2. Styling for the iframe */
+    #dsr-dnss-iframe {
+        width: 100%;       /* 100% of the page width */
+        height: 100vh;     /* 100% of the viewport height */
+        border: none;      /* Removes the "boxy" border */
+        display: block;    /* Removes extra whitespace at the bottom */
+    }
+		
+	.cmp-revoke-consent {
         position: fixed !important;
         bottom: 300px !important; /* Adjust this if the banner is taller */
         left: 20px !important;
