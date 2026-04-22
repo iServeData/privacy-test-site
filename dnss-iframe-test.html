@@ -3,25 +3,21 @@
 <head>
     <title>Securiti Compliance Test Site</title>
 	<style>
-    <!-- 1. Reset margins so the iframe can touch the edges -->
     html, body {
         margin: 0;
         padding: 0;
         width: 100%;
-		/* Firefox compatibility since we need this for GPC signal native */
-		min-height: 100%;
-		display: flex;
-		flex-direction: column;
+		height: 100%;
     }
-
-    <!-- 2. Styling for the iframe -->
+		
+    <!-- Styling for the iframe Chrome/Firefox-->
     #dsr-dnss-iframe {
         width: 100%;       /* 100% of the page width */
         height: 100vh;     /* 100% of the viewport height */
-		min-height: 100vh; /* Firefox */
-        border: 0;
-        display: block;
-		flex-grow: 1;		/* Occupy remaining space */
+        border: none;      /* Removes the "boxy" border */
+        display: block;    /* Removes extra whitespace at the bottom */
+		margin: 0;
+		padding: 0;
     }
 		
 	.cmp-revoke-consent {
