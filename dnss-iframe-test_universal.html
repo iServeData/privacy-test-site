@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Securiti Compliance Test Site</title>
+	<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.header-content {
+		padding: 10px 20px;
+		background: #f4f4f4;
+		flex-shrink: 0;
+	}
+	
+	#dsr-dnss-iframe {
+		flex-grow: 1;
+		width: 100%;
+		border: none;
+		display: block;
+	}
+
+	.cmp-revoke-consent {
+        position: fixed !important;
+        bottom: 300px !important; /* Adjust this if the banner is taller */
+        left: 20px !important;
+        z-index: 99999 !important; /* Ensures it stays on top of the banner */
+        background-color: #333 !important;
+        color: white !important;
+        padding: 8px 15px !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-size: 14px !important;
+    }
+	</style>
+
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+	<script>
+	(function () {
+		var s = document.createElement('script');
+		s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+		s.setAttribute('data-tenant-uuid', '4f6e2010-2e0d-40f3-8e6e-81bb16f29d0a');
+		s.setAttribute('data-domain-uuid', '91c9283b-0a5a-4c06-aa22-4a749afbf014');
+		s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+		s.setAttribute('data-skip-css', 'false');
+		s.defer = true;
+		var parent_node = document.head || document.body;
+		parent_node.appendChild(s);
+	})()
+	</script>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+	<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-XXXXX-Y', 'auto');
+	  ga('send', 'pageview');
+	</script>
+	
+	<script>
+	  !function(f,b,e,v,n,t,s)
+	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	  n.queue=[];t=b.createElement(e);t.async=!0;
+	  t.src=v;s=b.getElementsByTagName(e)[0];
+	  s.parentNode.insertBefore(t,s)}(window, document,'script',
+	  'https://connect.facebook.net/en_US/fbevents.js');
+	  fbq('init', '123456789');
+	  fbq('track', 'PageView');
+	</script>
+	
+</head>
+<body>
+    <h1>Securiti Privacy Test Site DSR DNSSS</h1>
+    <p>This site is for testing GPC, Banners, and Cookie Scanning. Including Data Subject Rights Do Not Sell or Share.</p>
+    <!-- Embedded DSR form (your URL) -->
+    <iframe
+      id="dsr-dnss-iframe"
+      title="Do Not Sell or Share Request"
+      src="https://privacy-central.securiti.ai/dsr-universal-embed/7752fe31-301c-482f-bb85-f11bb69f183b"
+    ></iframe>
+    <script>
+    window.addEventListener('message', (event) => {
+        if (event.data.sec_signal_identifier === 'sec-dsr-submission-success') {
+            // Process message
+            if (window.SecuritiSDK && bannerGenerator && (event.data.sec_dsr_data.ticket_type||[]).includes('do-not-sell')) {
+                bannerGenerator.setDoNotSellConsent()
+            }
+        }
+    });
+    </script>
+</body>
+</html>
