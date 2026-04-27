@@ -89,15 +89,7 @@
       title="Do Not Sell or Share Request"
       src="https://privacy-central.securiti.ai/dsr-embed/541552fa-95b3-4568-86f3-18dd883b2439"
     ></iframe>
-    <script>
-    window.addEventListener('message', (event) => {
-        if (event.data.sec_signal_identifier === 'sec-dsr-submission-success') {
-            // Process message
-            if (window.SecuritiSDK && bannerGenerator && (event.data.sec_dsr_data.ticket_type||[]).includes('do-not-sell')) {
-                bannerGenerator.setDoNotSellConsent()
-            }
-        }
-    });
+
     </script>
 </body>
 </html>
