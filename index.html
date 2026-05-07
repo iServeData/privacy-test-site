@@ -1,7 +1,15 @@
+---
+title: Banner Testing
+nav_order: 1
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Securiti Compliance Test Site</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ page.title }}</title>
+
 	<style>
     .cmp-revoke-consent {
         position: fixed !important;
@@ -17,48 +25,13 @@
     }
 	</style>
 
-	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-	<script>
-	(function () {
-		var s = document.createElement('script');
-		s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
-		s.setAttribute('data-tenant-uuid', '4f6e2010-2e0d-40f3-8e6e-81bb16f29d0a');
-		s.setAttribute('data-domain-uuid', '91c9283b-0a5a-4c06-aa22-4a749afbf014');
-		s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-		s.setAttribute('data-skip-css', 'false');
-		s.defer = true;
-		var parent_node = document.head || document.body;
-		parent_node.appendChild(s);
-	})()
-	</script>
-    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
-	<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
-
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-XXXXX-Y', 'auto');
-	  ga('send', 'pageview');
-	</script>
-	
-	<script>
-	  !function(f,b,e,v,n,t,s)
-	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	  n.queue=[];t=b.createElement(e);t.async=!0;
-	  t.src=v;s=b.getElementsByTagName(e)[0];
-	  s.parentNode.insertBefore(t,s)}(window, document,'script',
-	  'https://connect.facebook.net/en_US/fbevents.js');
-	  fbq('init', '123456789');
-	  fbq('track', 'PageView');
-	</script>
-	
+	{% include common-styles.html %}
+	{% include common-head.html %}
 </head>
 <body>
-    <h1>Securiti Privacy Test Site</h1>
-    <p>This site is for testing GPC, Banners, and Cookie Scanning.</p>
+	{% include page-header.html %}
+	{% include site-nav.html %}
+
+	{% include revoke-button.html %}
 </body>
 </html>
