@@ -1,0 +1,15 @@
+<nav class="site-nav">
+  <ul>
+    {% assign nav_pages = site.html_pages | sort: "nav_order" %}
+    {% for p in nav_pages %}
+      {% unless p.name == "404.html" " %}
+        >
+          <a href="{{ p.url | relative_url }}"
+             {% if p.url == page.url %}aria-current="page"{% endif %}>
+            {{ p.title | default: p.name }}
+          </a>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</nav>
