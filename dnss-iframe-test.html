@@ -11,42 +11,38 @@ nav_order: 4
 	<title>{{ page.title }}</title>
 
 	{% include common-head-top.html %}
-	
-	<style>
-	#dsr-dnss-iframe {
-		flex-grow: 1;
-		width: 100%;
-		border: none;
-		display: block;
-	}
-	</style>
-
 	{% include common-styles.html %}
 	{% include common-head.html %}
 </head>
 <body>
 	{% include page-header.html %}
 	{% include site-nav.html %}
-	
-	<h1>Do Not Sell or Share Information Example</h1>
-	<p>This sample demonstrates embedding Data Subject Rights in an iframe.</p>
 
-	<h2>What to observe</h2>
-	<ul>
-		<li>Inspect the page cookies in the the developer tools to observe the preferences selected.</li>
-		<li>When filling the form and selecting Do not Sell or Share, the cookies will change.</li>
-		<li>If using Global Privacy Control (GPC) the only configured non-essential cookie to not track will be Advertising by deault.</li>
-	</ul>
+	<main class="page-content">
+		<section class="descriptors">
+			<h1>Do Not Sell or Share Information Example</h1>
+			<p>This sample demonstrates embedding Data Subject Rights in an iframe.</p>
+		
+			<h2>What to observe</h2>
+			<ul>
+				<li>Inspect the page cookies in the the developer tools to observe the preferences selected.</li>
+				<li>When filling the form and selecting Do not Sell or Share, the cookies will change.</li>
+				<li>If using Global Privacy Control (GPC) the only configured non-essential cookie to not track will be Advertising by deault.</li>
+			</ul>
+		
+			<h2>Navigation</h2>
+			<p>Use the navigation above to move between the other test samples and compare behaviors.</p>
+		</section>
 
-	<h2>Navigation</h2>
-	<p>Use the navigation above to move between the other test samples and compare behaviors.</p>
-	
-    <!-- Embedded DSR form (your URL) -->
-    <iframe
-      id="dsr-dnss-iframe"
-      title="Do Not Sell or Share Request"
-      src="https://privacy-central.securiti.ai/dsr-embed/541552fa-95b3-4568-86f3-18dd883b2439"
-    ></iframe>
+		<section class="iframe-wrap">
+		    <!-- Embedded DSR form (your URL) -->
+		    <iframe
+		      id="dsr-dnss-iframe"
+		      title="Do Not Sell or Share Request"
+		      src="https://privacy-central.securiti.ai/dsr-embed/541552fa-95b3-4568-86f3-18dd883b2439"
+		    ></iframe>
+		</section>
+	</main>
 	
 	<script>
     window.addEventListener('message', (event) => {
