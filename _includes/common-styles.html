@@ -1,4 +1,7 @@
 <style>
+  html, body {
+    height: 100%;
+  }
   body {
     font-family: "Nunito Sans", Arial, sans-serif;
     margin: 0;
@@ -62,7 +65,11 @@
   }
 
   main {
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 140px);
+    padding: 1.5rem 1.5rem 7.5rem;
+    box-sizing: border-box;
   }
 
     /* ── Footer bar ── */
@@ -120,5 +127,41 @@
       bottom: auto !important;
       left: auto !important;
       z-index: auto !important;
+  }
+
+  .descriptors {
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .descriptors h1 {
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .descriptors h2 {
+    margin: 1.5rem 0 0.625rem 0;
+  }
+  
+  .descriptors ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  
+  .descriptors li + li {
+    margin-top: 0.5rem;
+  }
+  
+  .iframe-wrap {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+  }
+  
+  #dsr-dnss-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    display: block;
+    min-height: 500px;
   }
 </style>
