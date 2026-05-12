@@ -10,7 +10,6 @@ nav_order: 5
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ page.title }}</title>
 
-	
 	{% include common-head-top.html %}
 	
 	<style>
@@ -37,20 +36,6 @@ nav_order: 5
 		display: block;
 	}
 
-	.cmp-revoke-consent {
-        position: fixed !important;
-        bottom: 300px !important; /* Adjust this if the banner is taller */
-        left: 20px !important;
-        z-index: 99999 !important; /* Ensures it stays on top of the banner */
-        background-color: #333 !important;
-        color: white !important;
-        padding: 8px 15px !important;
-        border-radius: 4px !important;
-        cursor: pointer !important;
-        font-size: 14px !important;
-    }
-	</style>
-
 	{% include common-styles.html %}
 	{% include common-head.html %}
 	
@@ -58,7 +43,20 @@ nav_order: 5
 <body>
 	{% include page-header.html %}
 	{% include site-nav.html %}
-	
+
+	<h1>Do Not Sell or Share Information Example</h1>
+	<p>This sample demonstrates embedding Data Subject Rights Universal form in an iframe.</p>
+
+	<h2>What to observe</h2>
+	<ul>
+		<li>Inspect the page cookies in the the developer tools to observe the preferences selected.</li>
+		<li>When filling the form and selecting Do not Sell or Share, the cookies will change.</li>
+		<li>If using Global Privacy Control (GPC) the only configured non-essential cookie to not track will be Advertising by deault.</li>
+	</ul>
+
+	<h2>Navigation</h2>
+	<p>Use the navigation above to move between the other test samples and compare behaviors.</p>
+	 
     <!-- Embedded DSR form (your URL) -->
     <iframe
       id="dsr-dnss-iframe"
@@ -76,6 +74,6 @@ nav_order: 5
     });
     </script>
 
-	{% include revoke-button.html %}
+	{% include site-footer.html %}
 </body>
 </html>
