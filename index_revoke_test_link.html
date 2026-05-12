@@ -90,7 +90,37 @@ nav_order: 3
 	  }
 	
 	  main {
-	    padding: 1.5rem;
+	    display: flex;
+	    flex-direction: column;
+	    min-height: calc(100vh - 140px);
+	    width: 100%;
+	    max-width: 1100px;
+	    margin: 0 auto;
+	    padding: 1.5rem 1.5rem 7.5rem;
+	    box-sizing: border-box;
+	  }
+
+	  .descriptors {
+	    width: 100%;
+	    max-width: 760px;
+	    margin: 0 auto 1.5rem;
+	  }
+	  
+	  .descriptors h1 {
+	    margin: 0 0 0.75rem 0;
+	  }
+	  
+	  .descriptors h2 {
+	    margin: 1.5rem 0 0.625rem 0;
+	  }
+	  
+	  .descriptors ul {
+	    margin: 0;
+	    padding-left: 1.25rem;
+	  }
+	  
+	  .descriptors li + li {
+	    margin-top: 0.5rem;
 	  }
 	</style>
   
@@ -135,18 +165,22 @@ nav_order: 3
 <body>
 	{% include page-header.html %}
 	{% include site-nav.html %}
-	
-	<h1>Cookie Preference Button Example</h1>
-	<p>This sample demonstrates a banner if no preferences selected and a fixed Cookie Preferences button used for privacy-related links and consent controls.</p>
 
-	<h2>What to observe</h2>
-	<ul>
-		<li>A persisten "Cookie Preferences" button.</li>
-		<li>If using Global Privacy Control (GPC) the only configured non-essential cookie to not track will be Advertising by deault.</li>
-	</ul>
-
-	<h2>Navigation</h2>
-	<p>Use the navigation above to move between the other test samples and compare behaviors.</p>
+	<main class="page-content">
+		<section class="descriptors">
+			<h1>Cookie Preference Button Example</h1>
+			<p>This sample demonstrates a banner if no preferences selected and a fixed Cookie Preferences button used for privacy-related links and consent controls.</p>
+		
+			<h2>What to observe</h2>
+			<ul>
+				<li>A persisten "Cookie Preferences" button.</li>
+				<li>If using Global Privacy Control (GPC) the only configured non-essential cookie to not track will be Advertising by deault.</li>
+			</ul>
+		
+			<h2>Navigation</h2>
+			<p>Use the navigation above to move between the other test samples and compare behaviors.</p>
+		</section>
+	</main>
 	
 	{% include revoke-button.html %}
 </body>
